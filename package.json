@@ -1,0 +1,37 @@
+{
+  "name": "catbox.js",
+  "version": "0.0.1",
+  "description": "An API wrapper for https://catbox.moe",
+  "main": "src/index.js",
+  "scripts": {
+    "jsdoc": "jsdoc -c jsdoc.conf.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsamson33/catbox.js.git"
+  },
+  "keywords": [
+    "catbox",
+    "catbox.moe",
+    "api",
+    "api-wrapper"
+  ],
+  "author": "Samsamson33#0913",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samsamson33/catbox.js/issues"
+  },
+  "homepage": "https://github.com/samsamson33/catbox.js#readme",
+  "dependencies": {
+    "form-data": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-jsdoc": "^18.0.1",
+    "jsdoc": "^3.6.3",
+    "mocha": "^6.2.2",
+    "tui-jsdoc-template": "^1.2.2"
+  }
+}
