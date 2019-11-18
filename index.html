@@ -32,7 +32,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Externals</h3><ul><li><a href="external-ReadableStream.html">ReadableStream</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="external:ReadableStream_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CatboxClient.html">CatboxClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CatboxClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CatboxClient.html#fileUpload">fileUpload</a></li><li><a href="CatboxClient.html#urlUpload">urlUpload</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Externals</h3><ul><li><a href="external-ReadableStream.html">ReadableStream</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="external:ReadableStream_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CatboxClient.html">CatboxClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CatboxClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CatboxClient.html#deleteFiles">deleteFiles</a></li><li><a href="CatboxClient.html#fileUpload">fileUpload</a></li><li><a href="CatboxClient.html#urlUpload">urlUpload</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -53,6 +53,27 @@
 
     
 
+
+    <section>
+        <article class="readme"><h1>catbox.js</h1>
+<p>A (WIP) wrapper for the <a href="https://catbox.moe/">Catbox</a> api.</p>
+<p><a href="https://nodei.co/npm/catbox.js/"><img src="https://nodei.co/npm/catbox.js.png" alt="NPM"></a></p>
+<h2>Use</h2>
+<pre class="prettyprint source lang-javascript"><code>const CatboxClient = require(&quot;catbox.js&quot;);
+
+//Leave `userHash` out to use the API anonymously
+const client = new CatboxClient(&quot;&lt;userHash>&quot;);
+
+//Upload a file
+client.fileUpload(&quot;/path/to/file.png&quot;).then(url => console.log(url));
+
+//Upload a file from a url
+client.urlUpload(&quot;https://example.org/path/to/file.png&quot;).then(url => console.log(url));
+
+//Delete files (cannot be done anonymously)
+client.deleteFiles([&quot;filename.png&quot;, &quot;abcdef.jpg&quot;]);
+</code></pre></article>
+    </section>
 
 
 

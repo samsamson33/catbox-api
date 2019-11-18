@@ -34,7 +34,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Externals</h3><ul><li><a href="external-ReadableStream.html">ReadableStream</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="external:ReadableStream_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CatboxClient.html">CatboxClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CatboxClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CatboxClient.html#fileUpload">fileUpload</a></li><li><a href="CatboxClient.html#urlUpload">urlUpload</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Externals</h3><ul><li><a href="external-ReadableStream.html">ReadableStream</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="external:ReadableStream_sub"></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CatboxClient.html">CatboxClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CatboxClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CatboxClient.html#deleteFiles">deleteFiles</a></li><li><a href="CatboxClient.html#fileUpload">fileUpload</a></li><li><a href="CatboxClient.html#urlUpload">urlUpload</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -87,13 +87,13 @@ class CatboxClient {
 	async _getData(stream) {
 		return new Promise(resolve => {
 			stream.on("data", data => {
-				resolve(data);
+				resolve(data.toString());
 			});
 		});
 	}
 
 	/**
-	 * POSTs data to the Catbox API as multipart/formdata
+	 * POSTs form data to the Catbox API
 	 *
 	 * @private
 	 * @instance
@@ -116,7 +116,25 @@ class CatboxClient {
 		return submit("https://catbox.moe/user/api.php");
 	}
 
-/**
+	/**
+	 * Throws if the client does not have a userhash specified.
+	 *
+	 * @private
+	 * @instance
+	 * @memberof CatboxClient
+	 *
+	 * @param {string} caller - The name of the function calling this method
+	 * @returns {boolean} `True` if a userhash is specified on the client
+	 */
+	_requireUserHash(caller) {
+		if (!this.userHash) {
+			throw `A userhash must be specified to use the \`${caller}\` method`;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Uploads a file
 	 *
 	 * @instance
@@ -132,7 +150,7 @@ class CatboxClient {
 			fileToUpload: fs.createReadStream(path)
 		});
 
-		return (await this._getData(res)).toString();
+		return this._getData(res);
 	}
 
 	/**
@@ -151,7 +169,39 @@ class CatboxClient {
 			url
 		});
 
-		return (await this._getData(res)).toString();
+		return this._getData(res);
+	}
+
+	/**
+	 * Deletes files.
+	 * NOTE: This requires a userhash to be specified!
+	 *
+	 * @instance
+	 * @memberof CatboxClient
+	 *
+	 * @param {Array&lt;string>} files - The file names to delete
+	 * @returns {boolean} `True` if the operation was successful
+	 */
+	async deleteFiles(files) {
+		this._requireUserHash("deleteFiles");
+
+		const fileNameWithSpaces = files.find(fileName => fileName.includes(" "));
+
+		if (fileNameWithSpaces) {
+			throw `Files cannot have spaces in their name: \`${fileNameWithSpaces}\` is an invalid file name`;
+		}
+
+		const res = await this._send({
+			reqtype: "deletefiles",
+			userhash: this.userHash,
+			files: files.join(" ")
+		});
+
+		if (res.statusCode === 200) {
+			return true;
+		} else {
+			throw `Could not delete one or more files (Status Message: ${res.statusMessage}): ${files.join(" ")}`;
+		}
 	}
 }
 
