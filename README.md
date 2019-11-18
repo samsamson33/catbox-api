@@ -14,4 +14,6 @@ client.fileUpload("/path/to/file.png").then(url => console.log(url));
 //Upload a file from a url
 client.urlUpload("https://example.org/path/to/file.png").then(url => console.log(url));
 
+//Delete files
+client.deleteFiles(["filename.png", "abcdef.jpg"]);
 ```

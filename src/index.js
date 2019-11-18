@@ -69,6 +69,24 @@ class CatboxClient {
 	}
 
 	/**
+	 * Throws if the client does not have a userhash specified.
+	 *
+	 * @private
+	 * @instance
+	 * @memberof CatboxClient
+	 *
+	 * @param {string} caller - The name of the function calling this method
+	 * @returns {boolean} `True` if a userhash is specified on the client
+	 */
+	_requireUserHash(caller) {
+		if (!this.userHash) {
+			throw `A userhash must be specified to use the \`${caller}\` method`;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Uploads a file
 	 *
 	 * @instance
@@ -104,6 +122,38 @@ class CatboxClient {
 		});
 
 		return this._getData(res);
+	}
+
+	/**
+	 * Deletes files.
+	 * NOTE: This requires a userhash to be specified!
+	 *
+	 * @instance
+	 * @memberof CatboxClient
+	 *
+	 * @param {Array<string>} files - The file names to delete
+	 * @returns {boolean} `True` if the operation was successful
+	 */
+	async deleteFiles(files) {
+		this._requireUserHash("deleteFiles");
+
+		const fileNameWithSpaces = files.find(fileName => fileName.includes(" "));
+
+		if (fileNameWithSpaces) {
+			throw `Files cannot have spaces in their name: \`${fileNameWithSpaces}\` is an invalid file name`;
+		}
+
+		const res = await this._send({
+			reqtype: "deletefiles",
+			userhash: this.userHash,
+			files: files.join(" ")
+		});
+
+		if (res.statusCode === 200) {
+			return true;
+		} else {
+			throw `Could not delete one or more files (Status Message: ${res.statusMessage}): ${files.join(" ")}`;
+		}
 	}
 }
 
