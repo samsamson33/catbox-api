@@ -1,12 +1,12 @@
 dependencies:
   form-data: 3.0.0
+  jsdoc-template: github.com/braintree/jsdoc-template/9d711d2b0d427d2614da17a78c62c2a0e36a21fb
 devDependencies:
   chai: 4.2.0
   eslint: 6.6.0
-  eslint-plugin-jsdoc: 18.0.1_eslint@6.6.0
+  eslint-plugin-jsdoc: 18.1.2_eslint@6.6.0
   jsdoc: 3.6.3
   mocha: 6.2.2
-  tui-jsdoc-template: 1.2.2
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -122,10 +122,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-DdmyoGCleJnkbp3nkbxTLJ18rjDsE4yCggEwKNXkeV123sPNfOCYeDoeuOY+F2FrSjO1YXcTU+dsy96KMy+gcg==
-  /boolbase/1.0.0:
-    dev: true
-    resolution:
-      integrity: sha1-aN/1++YMUes3cl6p4+0xDcwed24=
   /brace-expansion/1.1.11:
     dependencies:
       balanced-match: 1.0.0
@@ -188,29 +184,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-V00xLt2Iu13YkS6Sht1sCu1KrII=
-  /cheerio/0.22.0:
-    dependencies:
-      css-select: 1.2.0
-      dom-serializer: 0.1.1
-      entities: 1.1.2
-      htmlparser2: 3.10.1
-      lodash.assignin: 4.2.0
-      lodash.bind: 4.2.1
-      lodash.defaults: 4.2.0
-      lodash.filter: 4.6.0
-      lodash.flatten: 4.4.0
-      lodash.foreach: 4.5.0
-      lodash.map: 4.6.0
-      lodash.merge: 4.6.2
-      lodash.pick: 4.4.0
-      lodash.reduce: 4.6.0
-      lodash.reject: 4.6.0
-      lodash.some: 4.6.0
-    dev: true
-    engines:
-      node: '>= 0.6'
-    resolution:
-      integrity: sha1-qbqoYKP5tZWmuBsahocxIe06Jp4=
   /cli-cursor/3.1.0:
     dependencies:
       restore-cursor: 3.1.0
@@ -271,19 +244,6 @@ packages:
       node: '>=4.8'
     resolution:
       integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
-  /css-select/1.2.0:
-    dependencies:
-      boolbase: 1.0.0
-      css-what: 2.1.3
-      domutils: 1.5.1
-      nth-check: 1.0.2
-    dev: true
-    resolution:
-      integrity: sha1-KzoRBTnFNV8c2NMUYj6HCxIeyFg=
-  /css-what/2.1.3:
-    dev: true
-    resolution:
-      integrity: sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==
   /debug/3.2.6:
     dependencies:
       ms: 2.1.1
@@ -342,48 +302,6 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
-  /dom-serializer/0.1.1:
-    dependencies:
-      domelementtype: 1.3.1
-      entities: 1.1.2
-    dev: true
-    resolution:
-      integrity: sha512-l0IU0pPzLWSHBcieZbpOKgkIn3ts3vAh7ZuFyXNwJxJXk/c4Gwj9xaTJwIDVQCXawWD0qb3IzMGH5rglQaO0XA==
-  /dom-serializer/0.2.2:
-    dependencies:
-      domelementtype: 2.0.1
-      entities: 2.0.0
-    dev: true
-    resolution:
-      integrity: sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==
-  /domelementtype/1.3.1:
-    dev: true
-    resolution:
-      integrity: sha512-BSKB+TSpMpFI/HOxCNr1O8aMOTZ8hT3pM3GQ0w/mWRmkhEDSFJkkyzz4XQsBV44BChwGkrDfMyjVD0eA2aFV3w==
-  /domelementtype/2.0.1:
-    dev: true
-    resolution:
-      integrity: sha512-5HOHUDsYZWV8FGWN0Njbr/Rn7f/eWSQi1v7+HsUVwXgn8nWWlL64zKDkS0n8ZmQ3mlWOMuXOnR+7Nx/5tMO5AQ==
-  /domhandler/2.4.2:
-    dependencies:
-      domelementtype: 1.3.1
-    dev: true
-    resolution:
-      integrity: sha512-JiK04h0Ht5u/80fdLMCEmV4zkNh2BcoMFBmZ/91WtYZ8qVXSKjiw7fXMgFPnHcSZgOo3XdinHvmnDUeMf5R4wA==
-  /domutils/1.5.1:
-    dependencies:
-      dom-serializer: 0.2.2
-      domelementtype: 1.3.1
-    dev: true
-    resolution:
-      integrity: sha1-3NhIiib1Y9YQeeSMn3t+Mjc2gs8=
-  /domutils/1.7.0:
-    dependencies:
-      dom-serializer: 0.2.2
-      domelementtype: 1.3.1
-    dev: true
-    resolution:
-      integrity: sha512-Lgd2XcJ/NjEw+7tFvfKxOzCYKZsdct5lczQ2ZaQY8Djz7pfAD3Gbp8ySJWtreII/vDlMVmxwa6pHmdxIYgttDg==
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -396,10 +314,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
-  /entities/2.0.0:
-    dev: true
-    resolution:
-      integrity: sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
   /es-abstract/1.16.0:
     dependencies:
       es-to-primitive: 1.2.1
@@ -439,7 +353,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
-  /eslint-plugin-jsdoc/18.0.1_eslint@6.6.0:
+  /eslint-plugin-jsdoc/18.1.2_eslint@6.6.0:
     dependencies:
       comment-parser: 0.7.0
       debug: 4.1.1
@@ -456,7 +370,7 @@ packages:
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0
     resolution:
-      integrity: sha512-ofNW3JmuZD9Gqn+qp/M6vPUfyaWHtfiNdmuoYmjyBcf5Xh2SMe1dnFa+gTGpfZLrjvBCdIbjxryRiF2QdqlQ0g==
+      integrity: sha512-bcMjTbnRwCv+cGHzyW4m50xhWb7mRSs+6cq9jNq23QjAXAYaFMQxklkF358rymit3Hkf7qSRSxSeERI9Zz5WiQ==
   /eslint-scope/5.0.0:
     dependencies:
       esrecurse: 4.2.1
@@ -740,17 +654,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
-  /htmlparser2/3.10.1:
-    dependencies:
-      domelementtype: 1.3.1
-      domhandler: 2.4.2
-      domutils: 1.7.0
-      entities: 1.1.2
-      inherits: 2.0.4
-      readable-stream: 3.4.0
-    dev: true
-    resolution:
-      integrity: sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -964,54 +867,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==
-  /lodash.assignin/4.2.0:
-    dev: true
-    resolution:
-      integrity: sha1-uo31+4QesKPoBEIysOJjqNxqKKI=
-  /lodash.bind/4.2.1:
-    dev: true
-    resolution:
-      integrity: sha1-euMBfpOWIqwxt9fX3LGzTbFpDTU=
-  /lodash.defaults/4.2.0:
-    dev: true
-    resolution:
-      integrity: sha1-0JF4cW/+pN3p5ft7N/bwgCJ0WAw=
-  /lodash.filter/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-ZosdSYFgOuHMWm+nYBQ+SAtMSs4=
-  /lodash.flatten/4.4.0:
-    dev: true
-    resolution:
-      integrity: sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
-  /lodash.foreach/4.5.0:
-    dev: true
-    resolution:
-      integrity: sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
-  /lodash.map/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
-  /lodash.merge/4.6.2:
-    dev: true
-    resolution:
-      integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
-  /lodash.pick/4.4.0:
-    dev: true
-    resolution:
-      integrity: sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=
-  /lodash.reduce/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-8atrg5KZrUj3hKu/R2WW8DuRTTs=
-  /lodash.reject/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-gNZJLcFHCGS79YNTO2UfQqn1JBU=
-  /lodash.some/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-G7nzFO9ri63tE7VJFpsqlF62jk0=
   /lodash/4.17.15:
     dev: true
     resolution:
@@ -1149,12 +1004,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-VNYPRfGfmZLx0Ye20jWzHUjyTW/c+6Wq+iLhDzUI4XmhrDd9l/FozXV3F2xOaXjvp0co0+v1YSR3CMP6g+VvLQ==
-  /nth-check/1.0.2:
-    dependencies:
-      boolbase: 1.0.0
-    dev: true
-    resolution:
-      integrity: sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
   /object-inspect/1.7.0:
     dev: true
     resolution:
@@ -1292,16 +1141,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /readable-stream/3.4.0:
-    dependencies:
-      inherits: 2.0.4
-      string_decoder: 1.3.0
-      util-deprecate: 1.0.2
-    dev: true
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
   /regexpp/2.0.1:
     dev: true
     engines:
@@ -1366,10 +1205,6 @@ packages:
       npm: '>=2.0.0'
     resolution:
       integrity: sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==
-  /safe-buffer/5.2.0:
-    dev: true
-    resolution:
-      integrity: sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
   /safer-buffer/2.1.2:
     dev: true
     resolution:
@@ -1482,12 +1317,6 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-fXZTSV55dNBwv16uw+hh5jkghxSnc5oHq+5K/gXgizHwAvMetdAJlHqqoFC1FSDVPYWLkAKl2cxpUT41sV7nSg==
-  /string_decoder/1.3.0:
-    dependencies:
-      safe-buffer: 5.2.0
-    dev: true
-    resolution:
-      integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   /strip-ansi/4.0.0:
     dependencies:
       ansi-regex: 3.0.0
@@ -1575,12 +1404,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /tui-jsdoc-template/1.2.2:
-    dependencies:
-      cheerio: 0.22.0
-    dev: true
-    resolution:
-      integrity: sha512-oqw0IYaot86VJ2owKBozJnilgta0Z55x8r9PeHj7vb+jDoSvJGRUQUcgs56SZh9HE20fx54Pe75p84X85/ygLA==
   /type-check/0.3.2:
     dependencies:
       prelude-ls: 1.1.2
@@ -1615,10 +1438,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-KY9Frmirql91X2Qgjry0Wd4Y+YTdrdZheS8TFwvkbLWf/G5KNJDCh6pKL5OZctEW4+0Baa5idK2ZQuELRwPznQ==
-  /util-deprecate/1.0.2:
-    dev: true
-    resolution:
-      integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
   /v8-compile-cache/2.1.0:
     dev: true
     resolution:
@@ -1708,11 +1527,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2eehun/8ALW8TLoIl7MVaRUrg+yCnenu8B4kBlRxj3GJGDKU1Og7sMXPNm1BYyM1DOJmTZ4YeN/Nwxv+8XJsUA==
+  github.com/braintree/jsdoc-template/9d711d2b0d427d2614da17a78c62c2a0e36a21fb:
+    dev: false
+    name: jsdoc-template
+    resolution:
+      registry: 'https://registry.npmjs.org/'
+      tarball: 'https://codeload.github.com/braintree/jsdoc-template/tar.gz/9d711d2b0d427d2614da17a78c62c2a0e36a21fb'
+    version: 3.3.0
 specifiers:
   chai: ^4.2.0
   eslint: ^6.6.0
-  eslint-plugin-jsdoc: ^18.0.1
+  eslint-plugin-jsdoc: ^18.1.2
   form-data: ^3.0.0
   jsdoc: ^3.6.3
+  jsdoc-template: 'github:braintree/jsdoc-template'
   mocha: ^6.2.2
-  tui-jsdoc-template: ^1.2.2

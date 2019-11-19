@@ -2,8 +2,17 @@
     "source": {
         "include": ["src"]
     },
+    "templates": {
+        "referenceTitle": "catbox.js",
+        "disableSort": false,
+        "collapse": true,
+        "resources": {
+            "GitHub": "https://github.com/samsamson33/catbox.js",
+            "NPM": "https://www.npmjs.com/package/catbox.js"
+        }
+    },
     "opts": {
-        "template": "node_modules/tui-jsdoc-template",
+        "template": "node_modules/jsdoc-template",
         "encoding": "utf8",
         "destination": "./docs/",
         "readme": "./README.md"
